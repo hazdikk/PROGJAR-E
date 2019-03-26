@@ -3,7 +3,7 @@ import socket
 
 SERVER_IP = '127.0.0.3'
 SERVER_PORT = 9000
-NAMAFILE='new.png'
+NAMAFILE='new.jpg'
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((SERVER_IP, SERVER_PORT))
