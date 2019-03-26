@@ -1,7 +1,7 @@
 import socket
 
 
-SERVER_IP = '127.0.0.3'
+SERVER_IP = '127.0.0.1'
 SERVER_PORT = 9000
 NAMAFILE='new.jpg'
 
