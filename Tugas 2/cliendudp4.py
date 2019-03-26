@@ -6,11 +6,11 @@ TARGET_PORT = 9000
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-namafile="bart.png"
+namafile="gunter.jpg"
 ukuran = os.stat(namafile).st_size
 
 
-fp = open('bart.png','rb')
+fp = open('gunter.jpg','rb')
 k = fp.read()
 terkirim=0
 for x in k:
