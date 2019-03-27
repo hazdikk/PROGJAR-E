@@ -1,5 +1,6 @@
 import sys
 import socket
+import os
 
 #Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -17,15 +18,22 @@ while True:
 	connection, client_address = sock.accept()
 	print >>sys.stderr, 'connection from', client_address
 
-	#Recieve teh data in small chunks and retransmit it
-	while True:
-		data = connection.recv(32)
-		print >>sys.stderr, 'received %s' % data
-		if data:
-			print >>sys.stderr, 'sending data back to the client'
-			connection.sendall('--->'+data)
-		else:
-			print >>sys.stderr,'connection closed', client_address
-			break
+	#Recieve teh data in smal:l chunks and retransmit it
+	for list in os.listdir('.'):
+		print list
+		data = list
+		connection.sendall('--->'+data)
+		
+	# while True:
+	# 	for list in os.listdir('.'):
+	# 		print list
+	# 	data = connection.recv(32)
+	# 	# print >>sys.stderr, 'received %s' % data
+	# 	if data:
+	# 		# print >>sys.stderr, 'sending data back to the client'
+	# 		connection.sendall('--->'+data)
+	# 	else:
+	# 		# print >>sys.stderr,'connection closed', client_address
+	# 		break
 
 	connection.close()
